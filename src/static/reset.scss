@@ -1,0 +1,39 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
+    color: #95A5A6;
+}
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 625%;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    /* project id 502904 */
+    src: url('//at.alicdn.com/t/font_502904_2fwi7itsocrf6r.eot');
+    src: url('//at.alicdn.com/t/font_502904_2fwi7itsocrf6r.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_502904_2fwi7itsocrf6r.woff') format('woff'), url('//at.alicdn.com/t/font_502904_2fwi7itsocrf6r.ttf') format('truetype'), url('//at.alicdn.com/t/font_502904_2fwi7itsocrf6r.svg#iconfont') format('svg');
+    font-style: italic;
+}
+
+body {
+    font-family: PingFangSC-Regular, Helvetica, "Droid Sans", Arial, sans-serif;
+    font-size: 0.16rem;
+}

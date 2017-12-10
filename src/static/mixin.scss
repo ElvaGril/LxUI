@@ -1,0 +1,45 @@
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin position($position: relative, $top: auto, $right: auto, $bottom: auto, $left: auto, $zindex: 0) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $zindex;
+}
+
+@mixin font($size: .16rem, $color: rgba(31, 31, 31, 1), $lh: 1, $ta: left, $weight: normal) {
+    font-size: $size;
+    color: $color;
+    line-height: $lh;
+    text-align: $ta;
+    font-weight: $weight;
+}
+
+@mixin border($diresction: bottom, $color: #fff, $width: 1px) {
+    position: relative;
+    &:after {
+        @if $diresction==bottom {
+            @include position(absolute, auto, 0, 0, 0, 1);
+            height: $width;
+        }
+        @else if $diresction==top {
+            @include position(absolute, 0, 0, auto, 0, 1);
+            height: $width;
+        }
+        @else if $diresction==right {
+            @include position(absolute, 0, 0, 0, auto, 1);
+            width: $width;
+        }
+        @else if $diresction==left {
+            @include position(absolute, 0, auto, 0, 0, 1);
+            width: $width;
+        }
+        background: $color;
+        content: "";
+    }
+}

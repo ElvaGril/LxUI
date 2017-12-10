@@ -1,0 +1,18 @@
+@import "../../static/mixin.scss";
+
+.lx-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: .5rem;
+    background: #34495E;
+    h1 {
+        @include font(.16rem, #fff, .5rem, center);
+    }
+}
+.lx-header-r-btn {
+    @include position(absolute, 0, 0, 0, auto, 1);
+    width: .5rem;
+    @include font(.18rem, #fff, .5rem, center);
+}
