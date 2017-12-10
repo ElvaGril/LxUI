@@ -1,0 +1,32 @@
+@import "../../static/mixin.scss";
+
+.msglist-item {
+    display: flex;
+    align-items: center;
+    padding: .08rem 0 .08rem .12rem;
+    height: .64rem;
+    @include border(bottom, #eee, 1px);
+    &:after {
+        left: .12rem;
+    }
+    &:last-child:after {
+        left: 0;
+    }
+}
+.msglist-item-photo {
+    margin-right: .12rem;
+    @include size(.48rem);
+    border-radius: .04rem;
+    overflow: hidden;
+    background: #f2f2f2;
+}
+.msglist-item-content {
+    flex: 1;
+    span {
+        @include font(.16rem, #454545, 1, left, 400);
+    }
+    p {
+        margin-top: .08rem;
+        @include font(.13rem, #999, 1.2);
+    }
+}

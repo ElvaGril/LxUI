@@ -9,19 +9,19 @@ export default class Tabbar extends Component {
 
     render() {
         return (
-            <footer className='lx-tabbar'>
-                <a href='javascript:;' className='lx-tabbar-item active'>
-                    <i className='lx-tabbar-icon'>&#xe69b;</i>
-                    <span className='lx-tabbar-name'>通讯录</span>
-                    <span className='lx-tabbar-badge'>3</span>
+            <footer className='lxui-tabbar'>
+                <a href='javascript:;' className='lxui-tabbar-item active'>
+                    <i className='lxui-icon lxui-tabbar-icon'>&#xe69b;</i>
+                    <span className='lxui-tabbar-name'>通讯录</span>
+                    <span className='lxui-tabbar-badge'>3</span>
                 </a>
-                <a href='javascript:;' className='lx-tabbar-item'>
-                    <i className='lx-tabbar-icon'>&#xe699;</i>
-                    <span className='lx-tabbar-name'>发现</span>
+                <a href='javascript:;' className='lxui-tabbar-item'>
+                    <i className='lxui-icon lxui-tabbar-icon'>&#xe699;</i>
+                    <span className='lxui-tabbar-name'>发现</span>
                 </a>
-                <a href='javascript:;' className='lx-tabbar-item'>
-                    <i className='lx-tabbar-icon'>&#xe6b8;</i>
-                    <span className='lx-tabbar-name'>我</span>
+                <a href='javascript:;' className='lxui-tabbar-item'>
+                    <i className='lxui-icon lxui-tabbar-icon'>&#xe6b8;</i>
+                    <span className='lxui-tabbar-name'>我</span>
                 </a>
             </footer>
         )

@@ -1,6 +1,6 @@
 @import "../../static/mixin.scss";
 
-.lx-header {
+.lxui-header {
     position: fixed;
     top: 0;
     right: 0;
@@ -11,8 +11,8 @@
         @include font(.16rem, #fff, .5rem, center);
     }
 }
-.lx-header-r-btn {
+.lxui-header-r-btn {
     @include position(absolute, 0, 0, 0, auto, 1);
     width: .5rem;
-    @include font(.18rem, #fff, .5rem, center);
+    @include font(.24rem, #fff, .5rem, center);
 }
