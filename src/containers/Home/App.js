@@ -20,15 +20,13 @@ export default class App extends Component {
         const { name } = this.props
 
         return (
-            <Router>
-                <div>
-                    <Header title='落雪图册' />
-                    <div className='lxui-wrapper'>
-                        <Message />
-                    </div>
-                    <Tabbar />
+            <div>
+                <Header title='落雪图册' />
+                <div className='lxui-wrapper'>
+                    <Message />
                 </div>
-            </Router>
+                <Tabbar />
+            </div>
         )
     }
 
