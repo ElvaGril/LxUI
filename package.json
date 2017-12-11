@@ -1,5 +1,5 @@
 {
-  "name": "A",
+  "name": "LxUI",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -33,7 +33,7 @@
     "webpack-merge": "^4.1.1"
   },
   "scripts": {
-    "build": "webpack-dev-server --open --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js",
     "server": "node dev-server.js --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

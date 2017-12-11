@@ -23,7 +23,7 @@ export default class MsgList extends Component {
     render() {
         return (
             <div className='msglist'>
-                {[1, 2, 3, 4, 5].map(item => <MsgItem />)}
+                {[1, 2, 3, 4, 5].map((item, index) => <MsgItem key={index} />)}
             </div>
         )
     }

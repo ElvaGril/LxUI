@@ -40,7 +40,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['./dist']),
         new HtmlWebpackPlugin({
-            title: 'Production'
+            template: './src/index.html'
         }),
         new webpack.HashedModuleIdsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
