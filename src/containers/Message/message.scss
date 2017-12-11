@@ -1,0 +1,44 @@
+@import '../../static/mixin';
+
+
+body.message_bg {
+    background: #f2f2f2;
+}
+.message {
+    padding: 0 .1rem;
+}
+.message-item {
+    display: flex;
+    padding: .12rem 0 0;
+    &.right {
+        // 右侧消息
+        flex-direction: row-reverse;
+        .message-item-photo {
+            margin-right: 0;
+            margin-left: .08rem;
+        }
+        .message-item-content {
+            text-align: right;
+        }
+    }
+}
+.message-item-photo {
+    margin-right: .08rem;
+    @include size(.32rem);
+    overflow: hidden;
+    img {
+        max-width: 100%;
+    }
+}
+.message-item-content {
+    flex: 1;
+}
+.message-item-text {
+    display: inline-block;
+    padding: .07rem .08rem;
+    min-height: .32rem;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 1px rgba(200, 200, 200, 1);
+    @include font(.14rem, #454545, .18rem);
+}

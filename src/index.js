@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader'
 import reducers from './reducers/reducers'
 import './static/reset.scss'
-import App from './containers/App/App'
+import App from './containers/Home/App'
 
 const store = createStore(reducers)
 
@@ -24,8 +24,8 @@ const render = Component => {
 render(App)
 
 if (module.hot) {
-    module.hot.accept('./containers/App/App', () => {
-        const App = require('./containers/App/App').default
+    module.hot.accept('./containers/Home/App', () => {
+        const App = require('./containers/Home/App').default
         render(App)
     })
 }

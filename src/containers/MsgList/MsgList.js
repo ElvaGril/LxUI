@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './msglist.scss'
-import userphoto from '../../static/imgs/love.jpg'
+import userphoto from '../../static/imgs/photo.jpg'
 
 const MsgItem = props => (
     <div className='msglist-item'>
