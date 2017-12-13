@@ -8,11 +8,11 @@ export default class Header extends Component {
     }
 
     render() {
-        const { title } = this.props
+        const { title, icon } = this.props
         return (
             <header className='lxui-header'>
                 <h1>{title}</h1>
-                <a className='lxui-header-r-btn lxui-icon' href='javascript:;'>&#xe6b9;</a>
+                {icon && <a className='lxui-header-r-btn lxui-icon' href='javascript:;'>{icon}</a>}
             </header>
         )
     }

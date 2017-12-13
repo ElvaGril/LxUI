@@ -1,0 +1,44 @@
+@import "../../static/mixin.scss";
+
+.lxui-cell {
+    display: flex;
+    align-items: center;
+    padding: .1rem .12rem;
+    min-height: .4rem;
+    @include border(bottom, #eee);
+    background: #fff;
+    &:first-child {
+        @include border(top, #eee);
+    }
+    &:active {
+        background: #e2e2e2;
+    }
+}
+
+.lxui-cell-icon {
+    margin-right: .12rem;
+    font-size: .2rem;
+}
+
+.lxui-cell-content {
+    flex: 1;
+    @include font(.16rem, #454545);
+}
+
+.lxui-cell-dsc {
+    @include font(.14rem, #999);
+}
+
+.lxui-cell-arrow {
+    margin-left: .06rem;
+    @include font(.18rem, #999);
+}
+
+.lxui-cells .lxui-cell {
+    &:after {
+        left: .12rem;
+    }
+    &:last-child:after {
+        left: 0;
+    }
+}

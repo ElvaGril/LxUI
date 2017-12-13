@@ -19,26 +19,39 @@ a {
     text-decoration: none;
     color: #95A5A6;
 }
+img {
+    max-width: 100%;
+}
+input, button {
+    color: inherit;
+    font: inherit;
+    outline: none !important;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+}
 html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     font-size: 625%;
 }
 @font-face {
-    font-family: 'lxfont';  /* project id 502904 */
-    font-style: italic;
-    src: url('//at.alicdn.com/t/font_502904_a6vmve51uw86ko6r.eot');
-    src: url('//at.alicdn.com/t/font_502904_a6vmve51uw86ko6r.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_502904_a6vmve51uw86ko6r.woff') format('woff'),
-    url('//at.alicdn.com/t/font_502904_a6vmve51uw86ko6r.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_502904_a6vmve51uw86ko6r.svg#iconfont') format('svg');
+    font-family: 'lxfont';
+    /* project id 502904 */
+    src: url('//at.alicdn.com/t/font_502904_isfvbyhd8xxyldi.eot');
+    src: url('//at.alicdn.com/t/font_502904_isfvbyhd8xxyldi.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_502904_isfvbyhd8xxyldi.woff') format('woff'), url('//at.alicdn.com/t/font_502904_isfvbyhd8xxyldi.ttf') format('truetype'), url('//at.alicdn.com/t/font_502904_isfvbyhd8xxyldi.svg#iconfont') format('svg');
 }
 .lxui-icon {
     font-family: 'lxfont';
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
     font-family: PingFangSC-Regular, Helvetica, "Droid Sans", Arial, sans-serif;
     font-size: 0.16rem;
     font-weight: 400;
+    &.message_bg {
+        background: #f2f2f2;
+    }
 }

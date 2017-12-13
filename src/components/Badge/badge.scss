@@ -1,0 +1,10 @@
+@import "../../static/mixin.scss";
+
+.lxui-badge {
+    @include position(absolute, 0, 50%, auto, auto, 1);
+    @include size(.16rem);
+    transform: translate(.24rem, -.04rem);
+    background: #F43530;
+    border-radius: 50%;
+    @include font(.1rem, #fff, .16rem, center);
+}

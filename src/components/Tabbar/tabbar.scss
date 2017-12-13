@@ -11,17 +11,12 @@
     position: relative;
     flex: 1;
     text-align: center;
+    a {
+        display: block;
+    }
     .lxui-tabbar-icon {
         display: inline-block;
         @include font(.2rem, #888, 1, center);
-    }
-    .lxui-tabbar-badge {
-        @include position(absolute, 0, 50%, auto, auto, 1);
-        @include size(.16rem);
-        transform: translate(.24rem, -.04rem);
-        background: #F43530;
-        border-radius: 50%;
-        @include font(.1rem, #fff, .16rem, center);
     }
     .lxui-tabbar-name {
         display: block;
