@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
+// import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import Input from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
+import { updateUser } from '../../actions/user'
+import wilddog from 'wilddog'
 import './login.scss'
 
+@connect(null, dispatch => ({
+    updateUser: user => dispatch(updateUser(user))
+}))
 export default class Login extends Component {
 
     constructor(props) {
@@ -23,8 +30,19 @@ export default class Login extends Component {
             alert('名字长度必须大于3个字符')
             return
         }
-        localStorage.setItem('loggein', this.state.name)
+        let user = { name: this.state.name }
+        const _user = this.ref.push(JSON.stringify(user))
+        user.id = _user.key()
+        this.props.updateUser(user)
+        localStorage.setItem('user', JSON.stringify(user))
         this.props.history.push('/message')
+    }
+
+    componentWillMount() {
+        wilddog.initializeApp({
+            syncURL: 'https://wd1892954234ykrnvw.wilddogio.com'
+        })
+        this.ref = wilddog.sync().ref('/user')
     }
 
     render() {

@@ -43,6 +43,7 @@ export default class Tabbar extends Component {
     }
 
     render() {
+        console.log(this.props)
         const { pathname } = this.props
         return (
             <footer className='lxui-tabbar'>

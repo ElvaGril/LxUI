@@ -35,6 +35,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
+    "build:server": "webpack-dev-server --open --config webpack.prod.js",
     "server": "node dev-server.js --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

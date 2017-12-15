@@ -4,11 +4,11 @@ import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader'
-import reducers from './reducers/reducers'
+import rootReducers from './reducers/reducers'
 import './static/reset.scss'
 import App from './containers/Home/App'
 
-const store = createStore(reducers)
+const store = createStore(rootReducers)
 
 const render = Component => {
     ReactDOM.render(

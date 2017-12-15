@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import './usercenter.scss'
 import Cell, { Cells } from '../../../components/Cell/Cell'
 import photo from '../../../static/imgs/photo.jpg'
 
+@connect(state => ({
+    user: state.user.user
+}))
 export default class UserCenter extends Component {
 
     constructor(props) {
@@ -10,10 +14,12 @@ export default class UserCenter extends Component {
     }
 
     componentWillMount() {
+        console.log(this.props)
         document.body.classList.add('message_bg')
     }
 
     render() {
+        const { user } = this.props
         return (
             <div className='usercenter'>
                 <div className='usercenter-user'>
@@ -23,7 +29,7 @@ export default class UserCenter extends Component {
                                 <img src={photo} title='' alt='' />
                             </div>
                             <div className='user-sketch-main'>
-                                <span>千山慕雪</span>
+                                <span>{user.name}</span>
                                 <p>落雪号：luoxue714</p>
                             </div>
                         </div>

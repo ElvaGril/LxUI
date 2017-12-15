@@ -35,3 +35,29 @@
     box-shadow: 0 0 1px rgba(200, 200, 200, 1);
     @include font(.14rem, #454545, .18rem);
 }
+
+.message-footer {
+    @include position(fixed, auto, 0, 0, 0, 9);
+    display: flex;
+    align-items: center;
+    padding: 0 .12rem;
+    height: .48rem;
+    background: #f9f9f9;
+}
+.message-input {
+    flex: 1;
+    input {
+        border-color: #e9e9e9;
+        border-radius: 4px;
+    }
+}
+.message-sendbtn {
+    margin-left: .12rem;
+    a {
+        display: block;
+        @include size(.8rem, .36rem);
+        @include font(.14rem, #fff, .36rem, center);
+        background: #3498DB;
+        border-radius: 4px;
+    }
+}

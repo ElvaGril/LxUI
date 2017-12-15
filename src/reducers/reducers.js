@@ -1,12 +1,12 @@
+import { combineReducers } from 'redux'
+import { message } from './message'
+import { news } from './new'
+import { user } from './user'
 
-export default function(state = {name: 'qianshan'}, action) {
-    switch(action.type) {
-        case 'UPDATE':
-        return {
-            ...state,
-            name: action.name
-        }
-        default:
-        return state
-    }
-}
+const rootReducers = combineReducers({
+    message,
+    news,
+    user
+})
+
+export default rootReducers

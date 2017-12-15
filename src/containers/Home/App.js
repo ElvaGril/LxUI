@@ -6,11 +6,14 @@ import User from '../User/User'
 import Login from '../Login/Login'
 import { Router, Route, Link, HashRouter, Redirect } from 'react-router-dom'
 import createHistory from 'history/createHashHistory'
+import { updateUser } from '../../actions/user'
 import './app.scss'
 
 const history = createHistory()
 
-@connect(state => state)
+@connect(null, dispatch => ({
+    updateUser: user => dispatch(updateUser(user))
+}))
 export default class App extends Component {
 
     constructor(props) {
@@ -21,9 +24,9 @@ export default class App extends Component {
     }
 
     componentWillMount() {
-        const loggeIn = localStorage.getItem('loggein')
-        console.log(loggeIn)
-        if(loggeIn) {
+        const user = localStorage.getItem('user')
+        this.props.updateUser(JSON.parse(user))
+        if (user) {
             this.setState({
                 loggeIn: true
             })
@@ -37,7 +40,7 @@ export default class App extends Component {
         return (
             <Router history={history}>
                 <div>
-                    < Route path='/' exact={true} render={() => (loggeIn ? <Redirect to='/message' /> : <Redirect to='/login' />)} />
+                    <Route path='/' exact={true} render={() => (loggeIn ? <Redirect to='/message' /> : <Redirect to='/login' />)} />
                     <Route path='/login' component={Login} />
                     <Route path='/message' component={Message} />
                     <Route path='/new' component={New} />
