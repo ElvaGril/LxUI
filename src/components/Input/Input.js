@@ -10,7 +10,7 @@ export default class Input extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            value: props.value || props.defaultValue || ''
+            value: props.value || ''
         }
     }
 
@@ -22,11 +22,11 @@ export default class Input extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        // if(nextProps.value !== this.state.value) {
-        //     this.setState({
-        //         value: nextProps.value || ''
-        //     })
-        // }
+        if(nextProps.value !== this.state.value) {
+            this.setState({
+                value: nextProps.value || ''
+            })
+        }
     }
 
     render() {
