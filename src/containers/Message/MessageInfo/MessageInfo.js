@@ -15,9 +15,9 @@ export default class MessageInfo extends Component {
         if (!props.location.state) {
             props.history.goBack()
         }
-
+        const msgList = localStorage.getItem(this.props.location.state.id)
         this.state = {
-            msgList: [],
+            msgList: msgList ? JSON.parse(msgList) : [],
             msg: ''
         }
         wilddog.initializeApp({
@@ -27,16 +27,14 @@ export default class MessageInfo extends Component {
     }
 
     componentWillMount() {
-        const msgList = localStorage.getItem(this.props.location.state.id)
-        this.setState({
-            msgList: msgList ? JSON.parse(msgList) : []
-        })
-
         this.msgRef.on('value', data => {
             if(data.val()) {
-                const msgList = this.state.msgList.slice(0)
-                msgList.push(JSON.parse(data.val()))
-                this.setState({ msgList })
+                const newMsg = JSON.parse(data.val())
+                if(newMsg.type !== 'me') {
+                    let msgList = this.state.msgList.slice(0)
+                    msgList = [...msgList, newMsg]
+                    this.setState({ msgList })
+                }
             }
         })
         document.body.classList.add('message_bg')
@@ -44,6 +42,9 @@ export default class MessageInfo extends Component {
 
     handleSend() {
         this.setState({ msg: '' })
+        let msgList = this.state.msgList.slice(0)
+        msgList = [...msgList, { type: 'me', msg: this.state.msg }]
+        this.setState({ msgList })
         this.msgRef.set(JSON.stringify({ type: 'me', msg: this.state.msg }))
     }
 
@@ -84,11 +85,8 @@ export default class MessageInfo extends Component {
         )
     }
 
-    componentDidMount() {
-        localStorage.setItem(this.props.location.state.id, JSON.stringify(this.state.msgList))
-    }
-
     componentWillUnmount() {
+        localStorage.setItem(this.props.location.state.id, JSON.stringify(this.state.msgList))
         this.msgRef.off()
     }
 
