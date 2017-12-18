@@ -15,37 +15,46 @@ export default class MessageInfo extends Component {
         if (!props.location.state) {
             props.history.goBack()
         }
-        const msgList = localStorage.getItem(this.props.location.state.id)
         this.state = {
-            msgList: msgList ? JSON.parse(msgList) : [],
+            msgList: [],
             msg: ''
         }
+        this.firstLoad = true // 是否第一次请求聊天记录
         wilddog.initializeApp({
             syncURL: 'https://wd1892954234ykrnvw.wilddogio.com'
         })
         this.msgRef = wilddog.sync().ref(`/msg/${props.user.id}/${props.location.state.id}`)
+        this.otherRef = wilddog.sync().ref(`/msg/${props.location.state.id}/${props.user.id}`)
     }
 
     componentWillMount() {
         this.msgRef.on('value', data => {
             if(data.val()) {
-                const newMsg = JSON.parse(data.val())
-                if(newMsg.type !== 'me') {
-                    let msgList = this.state.msgList.slice(0)
-                    msgList = [...msgList, newMsg]
-                    this.setState({ msgList })
+                console.log(data.val())
+                const msgList = JSON.parse(data.val())
+                msgList.map(item => {
+                    item.status = 1
+                    return item
+                })
+                if(this.firstLoad) {
+                    // 第一次加载需要把当前聊天对象发送过来的消息全部设置为已读
+                    this.firstLoad = false
+                    this.msgRef.set(JSON.stringify(msgList))
+                    this.otherRef.set(JSON.stringify(msgList))
                 }
+                this.setState({ msgList })
             }
         })
         document.body.classList.add('message_bg')
     }
 
     handleSend() {
+        if(this.state.msg.length == 0) return
         this.setState({ msg: '' })
         let msgList = this.state.msgList.slice(0)
-        msgList = [...msgList, { type: 'me', msg: this.state.msg }]
-        this.setState({ msgList })
-        this.msgRef.set(JSON.stringify({ type: 'me', msg: this.state.msg }))
+        msgList = [...msgList, { status: 0, user: this.props.user.id, msg: this.state.msg }] // 0 表示未读，1表示已读
+        this.msgRef.set(JSON.stringify(msgList))
+        this.otherRef.set(JSON.stringify(msgList))
     }
 
     handleChangeMsg(value, props) {
@@ -56,13 +65,14 @@ export default class MessageInfo extends Component {
 
     render() {
         const { msg, msgList } = this.state
+        const { user } = this.props
 
         return (
             <div className='message'>
                 <div className='message-scroller'>
                     {msgList && msgList.length > 0 && msgList.map((item, index) => {
                         return (
-                            <div className={`message-item ${item.type === 'me' ? 'right' : ''}`} key={index}>
+                            <div className={`message-item ${item.user === user.id ? 'right' : ''}`} key={index}>
                                 <div className='message-item-photo'>
                                     <img src={love} title='' alt='' />
                                 </div>
@@ -86,7 +96,6 @@ export default class MessageInfo extends Component {
     }
 
     componentWillUnmount() {
-        localStorage.setItem(this.props.location.state.id, JSON.stringify(this.state.msgList))
         this.msgRef.off()
     }
 

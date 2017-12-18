@@ -36,10 +36,12 @@ html {
     font-size: 625%;
 }
 @font-face {
-    font-family: 'lxfont';
-    /* project id 502904 */
-    src: url('//at.alicdn.com/t/font_502904_isfvbyhd8xxyldi.eot');
-    src: url('//at.alicdn.com/t/font_502904_isfvbyhd8xxyldi.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_502904_isfvbyhd8xxyldi.woff') format('woff'), url('//at.alicdn.com/t/font_502904_isfvbyhd8xxyldi.ttf') format('truetype'), url('//at.alicdn.com/t/font_502904_isfvbyhd8xxyldi.svg#iconfont') format('svg');
+  font-family: 'lxfont';  /* project id 502904 */
+  src: url('//at.alicdn.com/t/font_502904_wrauhkltsr0vbo6r.eot');
+  src: url('//at.alicdn.com/t/font_502904_wrauhkltsr0vbo6r.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_502904_wrauhkltsr0vbo6r.woff') format('woff'),
+  url('//at.alicdn.com/t/font_502904_wrauhkltsr0vbo6r.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_502904_wrauhkltsr0vbo6r.svg#iconfont') format('svg');
 }
 .lxui-icon {
     font-family: 'lxfont';

@@ -25,8 +25,7 @@ const navList = [
         name: '发现',
         url: '/new',
         active: null,
-        icon: '',
-        count: 1        
+        icon: ''
     },
     {
         name: '我',

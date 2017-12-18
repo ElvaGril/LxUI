@@ -43,14 +43,14 @@ export default class MessageList extends Component {
         const userList = []
         for(let i = 0; i < this.userList.length; i++) {
             if(this.userList[i].id !== this.props.user.id) {
-                let msgItem = {}
+                let onceUserMsgList = []
                 if (this.msgList[this.userList[i].id]) {
-                    msgItem = JSON.parse(this.msgList[this.userList[i].id])
+                    onceUserMsgList = JSON.parse(this.msgList[this.userList[i].id])
                 }
                 userList.push({
                     id: this.userList[i].id,
                     name: this.userList[i].name,
-                    msg: msgItem.msg
+                    msg: onceUserMsgList.length > 0 ? onceUserMsgList[onceUserMsgList.length - 1].msg : ''
                 })
             }
         }

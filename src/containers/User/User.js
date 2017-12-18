@@ -14,7 +14,7 @@ export default class User extends Component {
             <div>
                 <Header title='我' />
                 <div className='lxui-wrapper'>
-                    <UserCenter />
+                    <UserCenter {...this.props}/>
                 </div>
                 <Tabbar {...this.props.location} />
             </div>

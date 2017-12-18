@@ -39,6 +39,7 @@ export default class Login extends Component {
     }
 
     componentWillMount() {
+        document.body.classList.remove('message_bg')
         wilddog.initializeApp({
             syncURL: 'https://wd1892954234ykrnvw.wilddogio.com'
         })
