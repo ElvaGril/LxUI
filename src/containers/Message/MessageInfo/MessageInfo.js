@@ -45,7 +45,7 @@ export default class MessageInfo extends Component {
                 this.setState({ msgList })
             }
         })
-        document.body.classList.add('message_bg')
+        document.body.classList.add('gray')
     }
 
     handleSend() {

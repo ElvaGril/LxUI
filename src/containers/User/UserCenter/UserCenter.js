@@ -18,7 +18,7 @@ export default class UserCenter extends Component {
     }
 
     componentWillMount() {
-        document.body.classList.add('message_bg')
+        document.body.classList.add('gray')
     }
 
     /* 退出，有风险，等同注销

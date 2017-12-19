@@ -13,7 +13,7 @@ export default class Message extends Component {
     render() {
         return (
             <div>
-                <Header title='消息' icon='&#xe6b9;' />
+                <Header title='消息' />
                 <div className='lxui-wrapper'>
                     <Route path='/message' exact={true} component={MessageList} />
                     <Route path='/message/messageinfo' component={MessageInfo} />

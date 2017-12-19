@@ -1,0 +1,11 @@
+@import "../../../static/mixin.scss";
+
+.friend-setlist {
+    .lxui-cell-icon {
+        @include size(.32rem);
+        text-align: center;
+        line-height: .32rem;
+        background: #F39C12;
+        color: #fff;
+    }
+}

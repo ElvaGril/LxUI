@@ -22,10 +22,16 @@ const navList = [
         icon: ''
     },
     {
+        name: '通讯录',
+        url: '/friend',
+        active: null,
+        icon: ''
+    },
+    {
         name: '发现',
         url: '/new',
         active: null,
-        icon: ''
+        icon: ''
     },
     {
         name: '我',

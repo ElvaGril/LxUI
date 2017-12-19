@@ -4,23 +4,10 @@ import { connect } from 'react-redux'
 import MessageInfo from '../MessageInfo/MessageInfo'
 import { updateUserList } from '../../../actions/message'
 import Tabbar from '../../../components/Tabbar/Tabbar'
+import List from '../../../components/List/List'
 import './messagelist.scss'
 import userphoto from '../../../static/imgs/photo.jpg'
 import wilddog from 'wilddog'
-
-const MsgItem = props => (
-    <div className='msglist-item'>
-        <Link to={{ pathname: `/message/messageinfo`, state: { id: props.id }}}>
-            <div className='msglist-item-photo'>
-                <img src={userphoto} title='luoxue' alt='luoxue' />
-            </div>
-            <div className='msglist-item-content'>
-                <span className='msglist-item-name'>{props.name}</span>
-                <p className='msglist-item-sketch'>{props.msg}</p>
-            </div>
-        </Link>
-    </div>    
-)
 
 @connect(state => ({
     user: state.user.user,
@@ -84,14 +71,20 @@ export default class MessageList extends Component {
                 this.mergeMsg()
             }
         })
-        document.body.classList.remove('message_bg')
+        document.body.classList.remove('gray')
     }
 
     render() {
         const { userList } = this.props
         return (
             <div className='msglist'>
-                {userList && userList.length > 0 && userList.map((item, index) => <MsgItem {...item} key={index} />)}
+                {userList && userList.length > 0 && userList.map((item, index) => {
+                    return (
+                        <Link to={{ pathname: `/message/messageinfo`, state: item }} key={index}>
+                            <List photo={userphoto} dsc={item.msg}>{item.name}</List>
+                        </Link>
+                    )
+                })}
                 {!userList && '人呐'}
                 <Tabbar {...this.props.location} />
             </div>

@@ -23,9 +23,7 @@
         margin-top: .06rem;
         @include font(.12rem, #888, 1, center);
     }
-    &.active {
-        .lxui-tabbar-name {
-            color: #09BB07;
-        }
+    &.active i, &.active span {
+        color: #09BB07;
     }
 }

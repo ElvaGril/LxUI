@@ -3,7 +3,7 @@
 .lxui-cell {
     display: flex;
     align-items: center;
-    padding: .1rem .12rem;
+    padding: .1rem;
     min-height: .4rem;
     @include border(bottom, #eee);
     background: #fff;
@@ -36,7 +36,7 @@
 
 .lxui-cells .lxui-cell {
     &:after {
-        left: .12rem;
+        left: .1rem;
     }
     &:last-child:after {
         left: 0;

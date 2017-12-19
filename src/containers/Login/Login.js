@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Input from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
@@ -39,7 +38,7 @@ export default class Login extends Component {
     }
 
     componentWillMount() {
-        document.body.classList.remove('message_bg')
+        document.body.classList.remove('gray')
         wilddog.initializeApp({
             syncURL: 'https://wd1892954234ykrnvw.wilddogio.com'
         })

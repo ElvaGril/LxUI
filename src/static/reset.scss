@@ -37,11 +37,11 @@ html {
 }
 @font-face {
   font-family: 'lxfont';  /* project id 502904 */
-  src: url('//at.alicdn.com/t/font_502904_wrauhkltsr0vbo6r.eot');
-  src: url('//at.alicdn.com/t/font_502904_wrauhkltsr0vbo6r.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_502904_wrauhkltsr0vbo6r.woff') format('woff'),
-  url('//at.alicdn.com/t/font_502904_wrauhkltsr0vbo6r.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_502904_wrauhkltsr0vbo6r.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_502904_u3xbcx3syhsn61or.eot');
+  src: url('//at.alicdn.com/t/font_502904_u3xbcx3syhsn61or.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_502904_u3xbcx3syhsn61or.woff') format('woff'),
+  url('//at.alicdn.com/t/font_502904_u3xbcx3syhsn61or.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_502904_u3xbcx3syhsn61or.svg#iconfont') format('svg');
 }
 .lxui-icon {
     font-family: 'lxfont';
@@ -53,7 +53,7 @@ body {
     font-family: PingFangSC-Regular, Helvetica, "Droid Sans", Arial, sans-serif;
     font-size: 0.16rem;
     font-weight: 400;
-    &.message_bg {
-        background: #e9e9e9;
+    &.gray {
+        background: #f2f2f2;
     }
 }

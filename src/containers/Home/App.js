@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Message from '../Message/Message'
+import Friend from '../Friend/Friend'
 import New from '../New/New'
 import User from '../User/User'
 import Login from '../Login/Login'
@@ -43,6 +44,7 @@ export default class App extends Component {
                     <Route path='/' exact={true} render={() => (loggeIn ? <Redirect to='/message' /> : <Redirect to='/login' />)} />
                     <Route path='/login' component={Login} />
                     <Route path='/message' component={Message} />
+                    <Route path='/friend' component={Friend} />
                     <Route path='/new' component={New} />
                     <Route path='/user' component={User} />
                 </div>
