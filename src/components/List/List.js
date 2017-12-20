@@ -11,7 +11,7 @@ export default class List extends Component {
         const { photo, children, dsc, size } = this.props
         let listClass = 'lxui-list-item'
         switch(size) {
-            case 'smalll':
+            case 'small':
             listClass += ' small'
             break
         }

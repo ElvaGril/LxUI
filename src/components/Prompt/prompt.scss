@@ -1,0 +1,7 @@
+@import '../../static/mixin.scss';
+
+.lxui-prompt-nodata {
+    display: flex;
+    align-items: center;
+    @include font(.14rem, #999, 1.6, center);
+}

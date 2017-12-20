@@ -3,6 +3,7 @@ import List from '../../../components/List/List'
 import Cell, { Cells } from '../../../components/Cell/Cell'
 import userphoto from '../../../static/imgs/photo.jpg'
 import './friendlist.scss'
+import wilddog from 'wilddog'
 
 export default class New extends Component {
 
@@ -40,10 +41,14 @@ export default class New extends Component {
                     </Cells>
                 </div>
                 {friendList && friendList.length > 0 && friendList.map((item, index) => {
-                    return <List photo={userphoto} size='smalll' key={index}>落雪</List>
+                    return <List photo={userphoto} size='small' key={index}>落雪</List>
                 })}
             </div>
         )
+    }
+
+    componentWillUnmount() {
+        this.friendRef.off()
     }
 
 }

@@ -1,0 +1,36 @@
+@import "../../static/mixin.scss";
+
+.lxui-search {
+    display: flex;
+    align-items: center;
+    padding: .1rem;
+    .lxui-search-label {
+        position: relative;
+        flex: 1;
+        input {
+            padding: 0 .1rem 0 .4rem;
+            width: 100%;
+            height: .32rem;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: .16rem;
+            font-size: .14rem;
+            line-height: .3rem;
+            transition: all .3s ease-out;
+        }
+        &:before {
+            @include position(absolute, 0, auto, 0, 0, 1);
+            width: .4rem;
+            text-align: center;
+            font-family: "lxfont";
+            line-height: .32rem;
+            content: "";
+            color: #09BB07;
+        }
+    }
+    a {
+        padding-left: .1rem;
+        font-size: .16rem;
+        color: #09BB07;
+    }
+}

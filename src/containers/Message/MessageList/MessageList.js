@@ -5,9 +5,9 @@ import MessageInfo from '../MessageInfo/MessageInfo'
 import { updateUserList } from '../../../actions/message'
 import Tabbar from '../../../components/Tabbar/Tabbar'
 import List from '../../../components/List/List'
+import { NoData } from '../../../components/Prompt/Prompt'
 import './messagelist.scss'
 import userphoto from '../../../static/imgs/photo.jpg'
-import wilddog from 'wilddog'
 
 @connect(state => ({
     user: state.user.user,
@@ -51,25 +51,27 @@ export default class MessageList extends Component {
         // 监听用户表
         this.userRef = wilddog.sync().ref('/user')
         this.userRef.on('value', data => {
-            this.userList = []
-            const _d = data.val()
-            if (_d) {
-                for (let attr in _d) {
-                    this.userList.push({
-                        ...JSON.parse(_d[attr]),
-                        id: attr
-                    })
-                }
-                this.mergeMsg()
-            }
+            console.log(data.val())
+            // this.userList = []
+            // const _d = data.val()
+            // if (_d) {
+            //     for (let attr in _d) {
+            //         this.userList.push({
+            //             ...JSON.parse(_d[attr]),
+            //             id: attr
+            //         })
+            //     }
+            //     this.mergeMsg()
+            // }
         })
         // 监听最新消息表
         this.msgRef = wilddog.sync().ref(`/msg/${this.props.user.id}`)
         this.msgRef.on('value', data => {
-            if (data.val()) {
-                this.msgList = data.val()
-                this.mergeMsg()
-            }
+            console.log(data.val())
+            // if (data.val()) {
+            //     this.msgList = data.val()
+            //     this.mergeMsg()
+            // }
         })
         document.body.classList.remove('gray')
     }
@@ -85,7 +87,7 @@ export default class MessageList extends Component {
                         </Link>
                     )
                 })}
-                {!userList && '人呐'}
+                {!userList && <div className='msglist-prompt'><NoData>咦，一个人都没有，赶紧去找朋友聊天吧</NoData></div>}
                 <Tabbar {...this.props.location} />
             </div>
         )

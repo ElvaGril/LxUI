@@ -1,1 +1,5 @@
 @import "../../../static/mixin.scss";
+
+.msglist-prompt .lxui-prompt-nodata {
+    min-height: 50vh;
+}
