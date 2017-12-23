@@ -13,4 +13,11 @@
         border-color: #09BB07;
         color: #fff;
     }
+    &.small {
+        width: auto;
+        height: .24rem;
+        line-height: .22rem;
+        font-size: .12rem;
+        display: inline-block;
+    }
 }

@@ -49,7 +49,7 @@ export default class Login extends Component {
             }else {
                 // 不存在则创建该用户
                 let user = { id: this.state.userName, name: this.state.name, userName: this.state.userName }
-                const _user = this.userRef.set({ [this.state.userName]: user })
+                const _user = this.userRef.update({ [this.state.userName]: user })
                 this.props.updateUser(user)
                 localStorage.setItem('user', JSON.stringify(user))
                 this.props.history.push('/message')
@@ -74,7 +74,7 @@ export default class Login extends Component {
                         <Input placeholder='昵称(2位以上)' name='name' borderType='line' value={name} onChange={this.handleChangItem.bind(this)} />
                     </div>
                     <div className='login-btn'>
-                        <Button type='primary' onClick={this.handleLogin.bind(this)}>登录</Button>
+                        <Button type='primary' onClick={this.handleLogin.bind(this)}>注册</Button>
                     </div>
                 </div>
             </div>

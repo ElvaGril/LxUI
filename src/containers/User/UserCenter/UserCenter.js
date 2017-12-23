@@ -57,7 +57,7 @@ export default class UserCenter extends Component {
                     <Cells>
                         <Cell icon='&#xe6de;' name='实验室' dsc='小白鼠' arrow={true} iconColor='#F39C12' />
                         <Cell icon='&#xe6ae;' name='设置' arrow={true} iconColor='#3498db' />
-                        <Cell icon='&#xe892;' name='退出' arrow={true} iconColor='#e74c3c' onClick={this.handleSignOut.bind(this)} />
+                        <Cell icon='&#xe892;' name='注销' arrow={true} iconColor='#e74c3c' onClick={this.handleSignOut.bind(this)} />
                     </Cells>
                 </div>
             </div>

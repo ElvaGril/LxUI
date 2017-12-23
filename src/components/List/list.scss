@@ -28,10 +28,10 @@
 }
 .lxui-list-item-content {
     flex: 1;
-    span {
+    span.lxui-list-item-name {
         @include font(.16rem, #454545);
     }
-    p {
+    p.lxui-list-item-dsc {
         margin-top: .08rem;
         @include font(.13rem, #999, 1.2);
     }

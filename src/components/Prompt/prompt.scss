@@ -3,5 +3,9 @@
 .lxui-prompt-nodata {
     display: flex;
     align-items: center;
-    @include font(.14rem, #999, 1.6, center);
+    min-height: .4rem;
+    p {
+        width: 100%;
+        @include font(.14rem, #999, 1.6, center);
+    }
 }

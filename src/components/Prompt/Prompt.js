@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './prompt.scss'
 
 export const NoData = props => (
-    <div className='lxui-prompt-nodata'>{props.children}</div>
+    <div className='lxui-prompt-nodata'><p>{props.children}</p></div>
 )
 
 export default class Prompt extends Component {

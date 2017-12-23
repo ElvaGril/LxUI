@@ -24,7 +24,7 @@ export default class MessageList extends Component {
     }
 
     /* 合并用户列表和消息列表的数据
-     * 除了自己，所有的用户都会查出来
+     * 有聊天记录的用户才会显示
      */
     mergeMsg() {
         const userList = []
@@ -49,20 +49,20 @@ export default class MessageList extends Component {
             syncURL: 'https://wd1892954234ykrnvw.wilddogio.com'
         })
         // 监听用户表
-        this.userRef = wilddog.sync().ref('/user')
+        this.userRef = wilddog.sync().ref(`/friend/${this.props.user.id}`)
         this.userRef.on('value', data => {
             console.log(data.val())
-            // this.userList = []
-            // const _d = data.val()
-            // if (_d) {
-            //     for (let attr in _d) {
-            //         this.userList.push({
-            //             ...JSON.parse(_d[attr]),
-            //             id: attr
-            //         })
-            //     }
-            //     this.mergeMsg()
-            // }
+            this.userList = []
+            const _d = data.val()
+            if (_d) {
+                for (let attr in _d) {
+                    this.userList.push({
+                        ..._d[attr],
+                        id: attr
+                    })
+                }
+                this.mergeMsg()
+            }
         })
         // 监听最新消息表
         this.msgRef = wilddog.sync().ref(`/msg/${this.props.user.id}`)
@@ -83,7 +83,7 @@ export default class MessageList extends Component {
                 {userList && userList.length > 0 && userList.map((item, index) => {
                     return (
                         <Link to={{ pathname: `/message/messageinfo`, state: item }} key={index}>
-                            <List photo={userphoto} dsc={item.msg}>{item.name}</List>
+                            <List photo={userphoto} dsc={item.msg} name={item.name}></List>
                         </Link>
                     )
                 })}

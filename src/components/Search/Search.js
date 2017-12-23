@@ -51,11 +51,11 @@ export default class Search extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.value !== this.state.value) {
-            this.setState({
-                value: nextProps.value || ''
-            })
-        }
+        // if (nextProps.value !== this.state.value) {
+        //     this.setState({
+        //         value: nextProps.value || ''
+        //     })
+        // }
     }
 
     componentWillMount() {
@@ -64,11 +64,12 @@ export default class Search extends Component {
 
     render() {
         const { value, edit } = this.state
+        const { placeholder } = this.props
         return (
             <div className='lxui-search'>
                 <label className='lxui-search-label'>
                     <form action='#' onSubmit={this.handleSearch.bind(this)}>
-                        <input type='' name='' value={value} placeholder='IPC号/手机号' onChange={this.handleChangeInput.bind(this)} ref={element => this.input = element} />
+                        <input type='' name='' value={value} placeholder={placeholder} onChange={this.handleChangeInput.bind(this)} ref={element => this.input = element} />
                     </form>
                 </label>
                 {edit && <a href='javascript:;' onClick={this.handleCancel.bind(this)}>取消</a>}

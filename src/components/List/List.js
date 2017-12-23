@@ -8,7 +8,7 @@ export default class List extends Component {
     }
 
     render() {
-        const { photo, children, dsc, size } = this.props
+        const { photo, children, dsc, size, name } = this.props
         let listClass = 'lxui-list-item'
         switch(size) {
             case 'small':
@@ -22,8 +22,9 @@ export default class List extends Component {
                     <img src={photo} title='luoxue' alt='luoxue' />
                 </div>
                 <div className='lxui-list-item-content'>
-                    <span>{children}</span>
-                    {dsc && <p>{dsc}</p>}
+                    {children}
+                    {!children && <span className='lxui-list-item-name'>{name}</span>}
+                    {!children && dsc && <p className='lxui-list-item-dsc'>{dsc}</p>}
                 </div>
             </div>
         )
