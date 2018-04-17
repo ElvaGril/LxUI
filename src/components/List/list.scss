@@ -7,7 +7,7 @@
     padding-left: .1rem;
     min-height: .42rem;
     overflow: hidden;
-    @include font(.14rem, #333)
+    @include font(.14rem, #333);
     & > i {
         margin-left: -.04rem;
         margin-right: .08rem;
@@ -18,7 +18,7 @@
         @include size(.3rem, .42rem);
         overflow: hidden;
         i {
-            @include pos(absolute, 50%, 0, 0, 0);
+            @include position(absolute, 50%, 0, 0, 0);
             transform: translate(0, -50%);
         }
     }
@@ -29,7 +29,7 @@
         min-width: .75rem;
         line-height: 1.4;
         em {
-            @include font(.12rem, #f67d2c)
+            @include font(.12rem, #f67d2c);
         }
     }
     .cy-item-value {
@@ -48,7 +48,7 @@
         padding: 0 .1rem;
     }
     .cy-item-arrow {
-        @include pos(absolute, 50%, .1rem, auto, atuo, 1);
+        @include position(absolute, 50%, .1rem, auto, atuo, 1);
         @include size(.1rem);
         border-right: 1px solid #7e7e7e;
         border-bottom: 1px solid #7e7e7e;
@@ -70,7 +70,7 @@
     .cy-item {
         min-height: .43rem;
         &:before {
-            @include pos(absolute, auto, 0, 0, .1rem, 1);
+            @include position(absolute, auto, 0, 0, .1rem, 1);
             height: 1px;
             transform: scale(1, .5);
             content: "";
@@ -81,7 +81,7 @@
         }
     }
     &:before, &:after {
-        @include pos(absolute, auto, 0, 0, 0, 1);
+        @include position(absolute, auto, 0, 0, 0, 1);
         height: 1px;
         transform: scale(1, .5);
         content: "";

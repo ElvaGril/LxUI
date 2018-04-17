@@ -22,7 +22,7 @@ export default class News extends Component {
 
         setTimeout(() => {
             this.setState({ newsList, isRefreshing: false })
-        }, 5000)
+        }, 2000)
         
     }
 
