@@ -1,0 +1,26 @@
+@import "../../../static/mixin.scss";
+
+.news-item {
+    margin-bottom: .12rem;
+    background: #fff;
+    border-radius: .08rem;
+    overflow: hidden;
+}
+.news-item-pic {
+    height: 1.6rem;
+    background: #416182;
+}
+.news-item-dsc {
+    padding: .16rem .12rem;
+    h2 {
+        color: #454545;
+        font-size: .14rem;
+        line-height: 1;
+    }
+    p {
+        margin-top: .1rem;
+        font-size: .12rem;
+        color: #95A5A6;
+        line-height: 1.6;
+    }
+}

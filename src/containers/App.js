@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Message from '../Message/Message'
-import Friend from '../Friend/Friend'
-import New from '../New/New'
-import User from '../User/User'
-import Login from '../Login/Login'
+import News from './News/News'
+import Memory from './Memory/Memory'
+import Photos from './Photos/Photos'
+import Me from './Me/Me'
+import Login from './Login/Login'
+import Header from '../components/Header/Header'
+import Tabbar from '../components/Tabbar/Tabbar'
 import { Router, Route, Link, HashRouter, Redirect } from 'react-router-dom'
 import createHistory from 'history/createHashHistory'
-import { updateUser } from '../../actions/user'
-import './app.scss'
+import { updateUser } from '../actions/user'
 
 const history = createHistory()
 
@@ -20,7 +21,7 @@ export default class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            loggeIn: false
+            loggeIn: false // 是否登录
         }
     }
 
@@ -40,13 +41,13 @@ export default class App extends Component {
 
         return (
             <Router history={history}>
-                <div>
-                    <Route path='/' exact={true} render={() => (loggeIn ? <Redirect to='/message' /> : <Redirect to='/login' />)} />
+                <div className='lxui-page'>
+                    <Route path='/' exact={true} render={() => (loggeIn ? <Redirect to='/news' /> : <Redirect to='/login' />)} />
                     <Route path='/login' component={Login} />
-                    <Route path='/message' component={Message} />
-                    <Route path='/friend' component={Friend} />
-                    <Route path='/new' component={New} />
-                    <Route path='/user' component={User} />
+                    <Route path='/news' component={News} />
+                    <Route path='/memory' component={Memory} />
+                    <Route path='/photos' component={Photos} />
+                    <Route path='/me' component={Me} />
                 </div>
             </Router>
         )

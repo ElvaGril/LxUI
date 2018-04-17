@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Header from '../../components/Header/Header'
 import Tabbar from '../../components/Tabbar/Tabbar'
 
-export default class New extends Component {
+export default class Photos extends Component {
 
     constructor(props) {
         super(props)
@@ -11,7 +11,7 @@ export default class New extends Component {
     render() {
         return (
             <div>
-                <Header title='发现' />
+                <Header title='流水' />
                 <div className='lxui-wrapper'>
                     
                 </div>

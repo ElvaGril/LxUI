@@ -1,0 +1,21 @@
+.lx-pullrefresh {
+    position: relative;
+    overflow: hidden;
+}
+.lx-pullrefresh-container {
+    &.loading {
+        transform: translate(0, -42px) !important;
+    }
+}
+.lx-pullrefresh-tips {
+    padding-top: .4rem;
+    height: .8rem;
+    text-align: center;
+    font-size: .12rem;
+    line-height: 1;
+    color: #999;
+    transition: all .3s ease-out;
+    &.loading {
+        padding-top: .56rem;
+    }
+}

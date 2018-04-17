@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import Input from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
 import { updateUser } from '../../actions/user'
-import wilddog from 'wilddog'
 import './login.scss'
 
 @connect(null, dispatch => ({
@@ -17,10 +16,6 @@ export default class Login extends Component {
             userName: '', // 用户名
             name: '' // 昵称
         }
-        wilddog.initializeApp({
-            syncURL: 'https://wd1892954234ykrnvw.wilddogio.com'
-        })
-        this.userRef = wilddog.sync().ref('/user')
     }
 
     handleChangItem(value, props) {
@@ -40,21 +35,6 @@ export default class Login extends Component {
             alert('名字必须是2位以上')
             return
         }
-        this.userRef.once('value', data => {
-            // 判断是否存在该用户
-            const newUser = data.hasChild(this.state.userName)
-            if (newUser) {
-                alert('该用户名已经存在')
-                return
-            }else {
-                // 不存在则创建该用户
-                let user = { id: this.state.userName, name: this.state.name, userName: this.state.userName }
-                const _user = this.userRef.update({ [this.state.userName]: user })
-                this.props.updateUser(user)
-                localStorage.setItem('user', JSON.stringify(user))
-                this.props.history.push('/message')
-            }
-        })
     }
 
     componentWillMount() {

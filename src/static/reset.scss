@@ -26,7 +26,6 @@ input, button {
     color: inherit;
     font: inherit;
     outline: none !important;
-    -webkit-appearance: none;
     appearance: none;
     border-radius: 0;
 }
@@ -37,11 +36,11 @@ html {
 }
 @font-face {
   font-family: 'lxfont';  /* project id 502904 */
-  src: url('//at.alicdn.com/t/font_502904_u3xbcx3syhsn61or.eot');
-  src: url('//at.alicdn.com/t/font_502904_u3xbcx3syhsn61or.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_502904_u3xbcx3syhsn61or.woff') format('woff'),
-  url('//at.alicdn.com/t/font_502904_u3xbcx3syhsn61or.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_502904_u3xbcx3syhsn61or.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_502904_rt16zpaiqxmkj4i.eot');
+  src: url('//at.alicdn.com/t/font_502904_rt16zpaiqxmkj4i.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_502904_rt16zpaiqxmkj4i.woff') format('woff'),
+  url('//at.alicdn.com/t/font_502904_rt16zpaiqxmkj4i.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_502904_rt16zpaiqxmkj4i.svg#iconfont') format('svg');
 }
 .lxui-icon {
     font-family: 'lxfont';
@@ -56,4 +55,8 @@ body {
     &.gray {
         background: #f2f2f2;
     }
+}
+
+.lxui-wrapper {
+    margin-top: .5rem;
 }
