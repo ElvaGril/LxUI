@@ -3,9 +3,9 @@
 .usercenter {
     padding-top: .12rem;
 }
-.user-sketch {
-    display: flex;
-    align-items: center;
+.usercenter-user {
+    padding: .1rem 0;
+    background: #fff;
 }
 .user-sketch-photo {
     margin-right: .12rem;
@@ -17,7 +17,6 @@
     span {
         @include font(.16rem, #454545);
     }
-
     p {
         margin-top: .1rem;
         @include font(.12rem, #999);

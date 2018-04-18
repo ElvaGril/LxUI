@@ -35,6 +35,9 @@ export default class Login extends Component {
             alert('名字必须是2位以上')
             return
         }
+
+        localStorage.setItem('user', JSON.stringify(this.state))
+        this.props.history.replace('/news')
     }
 
     componentWillMount() {

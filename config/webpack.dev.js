@@ -7,7 +7,7 @@ module.exports = {
     devtool: 'inline-source-map',
     entry: {
         'js/app': './src/index.js',
-        'js/static/vendor': ['babel-polyfill', 'react', 'react-dom', 'redux', 'react-redux', 'react-router-dom']
+        'js/static/vendor': ['whatwg-fetch', 'babel-polyfill', 'react', 'react-dom', 'redux', 'react-redux', 'react-router-dom']
     },
     output: {
         filename: '[name].js',

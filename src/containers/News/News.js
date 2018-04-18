@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
+import ajax from '../../utils/ajax'
+import $ from 'jquery'
 import './news.scss'
 import Header from '../../components/Header/Header'
 import Tabbar from '../../components/Tabbar/Tabbar'
@@ -15,6 +17,7 @@ export default class News extends Component {
             newsList: [1, 2], // 信息列表
             isRefreshing: false
         }
+
     }
 
     handleRefresh() {
@@ -27,7 +30,7 @@ export default class News extends Component {
     }
 
     componentWillMount() {
-        document.body.classList.add('gray')
+        
     }
 
     render() {

@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header'
 import Tabbar from '../../components/Tabbar/Tabbar'
 import './me.scss'
 import Seter from './Seter/Seter'
+import UserSet from './UserSet/UserSet'
 import User from './User/User'
 
 export default class Me extends Component {
@@ -20,6 +21,7 @@ export default class Me extends Component {
                 <Header title='天涯' />
                 <Route path='/me' exact={true} component={User} />
                 <Route path='/me/seter' component={Seter} />
+                <Route path='/me/userset' component={UserSet} />
                 <Tabbar {...this.props.location} />
             </div>
         )

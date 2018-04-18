@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import List, { Item } from '../../../components/List/List'
 import Input from '../../../components/Input/Input'
-import Switch from '../../../components/Switch/Switch'
 
-export default class Seter extends Component {
+export default class UserSet extends Component {
 
     constructor(props) {
         super(props)

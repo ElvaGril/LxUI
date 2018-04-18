@@ -1,0 +1,13 @@
+.error-404 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .error-404-dsc {
+        font-size: .12rem;
+    }
+    .error-404-go {
+        margin-top: .24rem;
+        text-align: center;
+    }
+}

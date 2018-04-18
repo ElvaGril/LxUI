@@ -15,14 +15,14 @@ export class Item extends Component {
         const textDirection = this.props.textDirection || ''
 
         return(
-            <div className='cy-item' onClick={this.props.onClick}>
-                {this.props.fonticon && <i className={this.props.iconName} style={{ color: this.props.color }}>{this.props.fonticon}</i>}
-                {this.props.icon && (<div className='cy-item-icon'><i className={this.props.icon}></i></div>)}
-                {this.props.name && <div className='cy-item-name'><span>{this.props.seq && <em>{this.props.seq}</em>}{this.props.name}</span></div>}
-                <div className={`cy-item-value ${textDirection}`}>{this.props.children}</div>
-                {this.props.unit && <div className='cy-item-unit'>{this.props.unit}</div>}
-                {this.props.tips && <div className='cy-item-tips'>{this.props.tips}</div>}
-                {this.props.arrow && <span className='cy-item-arrow'></span>}
+            <div className='lxui-item' onClick={this.props.onClick}>
+                {this.props.fonticon && <i className={this.props.iconName} style={{ color: this.props.color }} dangerouslySetInnerHTML={{ __html: this.props.fonticon }}></i>}
+                {this.props.icon && (<div className='lxui-item-icon'><i className={this.props.icon}></i></div>)}
+                {this.props.name && <div className='lxui-item-name'><span>{this.props.seq && <em>{this.props.seq}</em>}{this.props.name}</span></div>}
+                <div className={`lxui-item-value ${textDirection}`}>{this.props.children}</div>
+                {this.props.unit && <div className='lxui-item-unit'>{this.props.unit}</div>}
+                {this.props.tips && <div className='lxui-item-tips'>{this.props.tips}</div>}
+                {this.props.arrow && <span className='lxui-item-arrow'></span>}
             </div>
         )
     }
@@ -35,7 +35,7 @@ export default class List extends Component {
     }
 
     render() {
-        let listClass = 'cy-list'
+        let listClass = 'lxui-list'
         if(this.props.type) listClass += ` ${this.props.type}`
         return (
             <div className={listClass}>

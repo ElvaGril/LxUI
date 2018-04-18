@@ -1,0 +1,45 @@
+.lxui-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: .42rem;
+    height: .22rem;
+    border-radius: .16rem;
+    background: #dedede;
+    transition: all .3s ease-in;
+    &:after {
+        position: absolute;
+        top: .02rem;
+        left: .02rem;
+        width: .18rem;
+        height: .18rem;
+        border-radius: .1rem;
+        background: #fff;
+        content: "";
+        transition: all .3s;
+    }
+    &.lxui-switch-checked {
+        background: #09BB07;
+        &:after {
+            margin-left: -.2rem;
+            left: 100%;
+        }
+        &:active:after {
+            margin-left: -.26rem;
+        }
+        .lxui-switch-inner {
+            margin-left: .06rem;
+            margin-right: .24rem;
+        }
+    }
+    &:active:after {
+        width: .24rem;
+    }
+    .lxui-switch-inner {
+        margin-left: .24rem;
+        margin-right: .06rem;
+        font-size: 12px;
+        line-height: 1;
+        color: #fff;
+    }
+}

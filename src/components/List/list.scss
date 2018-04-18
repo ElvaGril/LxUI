@@ -1,6 +1,6 @@
 @import '../../static/mixin.scss';
 
-.cy-item {
+.lxui-item {
     position: relative;
     display: flex;
     align-items: center;
@@ -8,12 +8,13 @@
     min-height: .42rem;
     overflow: hidden;
     @include font(.14rem, #333);
+    background: #fff;
     & > i {
         margin-left: -.04rem;
         margin-right: .08rem;
-        font-size: .24rem;
+        font-size: .2rem;
     }
-    .cy-item-icon {
+    .lxui-item-icon {
         position: relative;
         @include size(.3rem, .42rem);
         overflow: hidden;
@@ -22,7 +23,7 @@
             transform: translate(0, -50%);
         }
     }
-    .cy-item-name {
+    .lxui-item-name {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -32,22 +33,23 @@
             @include font(.12rem, #f67d2c);
         }
     }
-    .cy-item-value {
+    .lxui-item-value {
         flex: 1;
         display: flex;
         align-items: center;
+        margin-right: .1rem;
         &.right {
             justify-content: flex-end;
         }
     }
-    .cy-item-tips {
+    .lxui-item-tips {
         padding-right: .24rem;
         color: #aaa;
     }
-    .cy-item-unit {
+    .lxui-item-unit {
         padding: 0 .1rem;
     }
-    .cy-item-arrow {
+    .lxui-item-arrow {
         @include position(absolute, 50%, .1rem, auto, atuo, 1);
         @include size(.1rem);
         border-right: 1px solid #7e7e7e;
@@ -58,17 +60,17 @@
         background: rgba(250, 250, 250, 1);
     }
 }
-.cy-list {
+.lxui-list {
     // 一行显示两个
     position: relative;
+    background: #fff;
     &.inline {
         display: flex;
-        .cy-item {
+        .lxui-item {
             flex: 1;
         }
     }
-    .cy-item {
-        min-height: .43rem;
+    .lxui-item {
         &:before {
             @include position(absolute, auto, 0, 0, .1rem, 1);
             height: 1px;

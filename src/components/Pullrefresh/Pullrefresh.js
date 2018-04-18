@@ -58,7 +58,10 @@ export default class Pullrefresh extends Component {
         this.moveData.distanceY = this.touchData.moveTop - this.touchData.startTop - this.touchData.scrollTop
 
         if (scrollTop === 0 && this.moveData.distanceY > 0) {
-            event.preventDefault()
+            if (event.cancelable && !event.isDefaultPrevented) {
+                // 没有禁用的情况下，才禁用
+                event.preventDefault()
+            }
             this.isTriggerRefresh = true
             if (this.moveData.distanceY > this.loadingHeight) {
                 tips = '松开后刷新'
