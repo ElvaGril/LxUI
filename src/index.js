@@ -7,8 +7,16 @@ import { AppContainer } from 'react-hot-loader'
 import rootReducers from './reducers/reducers'
 import './static/reset.scss'
 import App from './containers/App'
+import FastClick from 'fastclick'
 
 const store = createStore(rootReducers)
+
+//解决移动端300毫秒延迟
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function () {
+        FastClick.attach(document.body)
+    }, false);
+}
 
 const render = Component => {
     ReactDOM.render(

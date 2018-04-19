@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import List, { Item } from '../../../components/List/List'
+import Header from '../../../components/Header/Header'
+import Tabbar from '../../../components/Tabbar/Tabbar'
 import './user.scss'
 import photo from '../../../static/imgs/photo.jpg'
 
@@ -19,7 +21,7 @@ export default class User extends Component {
     }
 
     handleLinkTo(page) {
-        this.props.history.push('/me/seter')
+        this.props.history.push(`/me/${page}`)
     }
 
     componentWillMount() {
@@ -34,25 +36,29 @@ export default class User extends Component {
         const { name, userName} = this.state
 
         return (
-            <div className='lxui-wrapper usercenter'>
-                <div className='usercenter-user'>
-                    <Item arrow={true}>
-                        <div className='user-sketch-photo'>
-                            <img src={photo} title='' alt='' />
-                        </div>
-                        <div className='user-sketch-main'>
-                            <span>{name}</span>
-                            <p>落雪号：{userName}</p>
-                        </div>
-                    </Item>
+            <div>
+                <Header title='天涯' />
+                <div className='lxui-wrapper usercenter'>
+                    <div className='usercenter-user' onClick={this.handleLinkTo.bind(this, 'userset')}>
+                        <Item arrow={true}>
+                            <div className='user-sketch-photo'>
+                                <img src={photo} title='' alt='' />
+                            </div>
+                            <div className='user-sketch-main'>
+                                <span>{name}</span>
+                                <p>落雪号：{userName}</p>
+                            </div>
+                        </Item>
+                    </div>
+                    <div className='usercenter-menus'>
+                        <List>
+                            <Item fonticon='&#xe6de;' iconName='lxui-icon' name='实验室' dsc='小白鼠' arrow={true} color='#F39C12' />
+                            <Item fonticon='&#xe6ae;' iconName='lxui-icon' name='设置' arrow={true} color='#3498db' onClick={this.handleLinkTo.bind(this, 'seter')} />
+                            <Item fonticon='&#xe892;' iconName='lxui-icon' name='注销' arrow={true} color='#e74c3c' onClick={this.handleSignOut.bind(this)} />
+                        </List>
+                    </div>
                 </div>
-                <div className='usercenter-menus'>
-                    <List>
-                        <Item fonticon='&#xe6de;' iconName='lxui-icon' name='实验室' dsc='小白鼠' arrow={true} color='#F39C12' />
-                        <Item fonticon='&#xe6ae;' iconName='lxui-icon' name='设置' arrow={true} color='#3498db' onClick={this.handleLinkTo.bind(this, 'seter')} />
-                        <Item fonticon='&#xe892;' iconName='lxui-icon' name='注销' arrow={true} color='#e74c3c' onClick={this.handleSignOut.bind(this)} />
-                    </List>
-                </div>
+                <Tabbar {...this.props.location} />
             </div>
         )
     }

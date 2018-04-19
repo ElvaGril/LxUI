@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux'
-import { message } from './message'
-import { news } from './new'
+import { news } from './news'
 import { user } from './user'
 
 const rootReducers = combineReducers({
-    message,
     news,
     user
 })

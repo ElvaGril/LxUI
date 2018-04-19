@@ -18,11 +18,9 @@ export default class Me extends Component {
 
         return (
             <div>
-                <Header title='天涯' />
                 <Route path='/me' exact={true} component={User} />
                 <Route path='/me/seter' component={Seter} />
                 <Route path='/me/userset' component={UserSet} />
-                <Tabbar {...this.props.location} />
             </div>
         )
     }

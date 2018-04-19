@@ -16,9 +16,6 @@ export default class Button extends Component {
         this.props.onClick()
     }
 
-    /**
-     * 
-     */
     render() {
         const { children, type, size, disabled } = this.props
         let _className = 'lxui-button'
