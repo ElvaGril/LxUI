@@ -19,8 +19,9 @@ export default class UserSet extends Component {
     }
 
     handleTapSave() {
-        
-        console.log(getFormData(this.formEl))
+        const user = getFormData(this.formEl)
+        localStorage.setItem('user', JSON.stringify(user))
+        this.props.updateUser(user)
     }
 
     render() {

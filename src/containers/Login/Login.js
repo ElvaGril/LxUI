@@ -37,6 +37,7 @@ export default class Login extends Component {
         }
 
         localStorage.setItem('user', JSON.stringify(this.state))
+        this.props.updateUser(this.state)
         this.props.history.replace('/news')
     }
 
