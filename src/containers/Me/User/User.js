@@ -52,7 +52,7 @@ export default class User extends Component {
                     </div>
                     <div className='usercenter-menus'>
                         <List>
-                            <Item fonticon='&#xe6de;' iconName='lxui-icon' name='实验室' dsc='小白鼠' arrow={true} color='#F39C12' />
+                            <Item fonticon='&#xe6de;' iconName='lxui-icon' name='实验室' dsc='小白鼠' arrow={true} color='#F39C12' onClick={this.handleLinkTo.bind(this, 'laboratory')} />
                             <Item fonticon='&#xe6ae;' iconName='lxui-icon' name='设置' arrow={true} color='#3498db' onClick={this.handleLinkTo.bind(this, 'seter')} />
                             <Item fonticon='&#xe892;' iconName='lxui-icon' name='注销' arrow={true} color='#e74c3c' onClick={this.handleSignOut.bind(this)} />
                         </List>

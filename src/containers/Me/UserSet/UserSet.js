@@ -25,7 +25,7 @@ export default class UserSet extends Component {
     }
 
     render() {
-        const { name, photo, sex, birthday, wechat, qq } = this.props.user
+        const { name, photo, sex, birthday, wechat, qq, userName } = this.props.user
 
         return (
             <div>
@@ -37,6 +37,9 @@ export default class UserSet extends Component {
                         </Item>
                         <Item name='姓名'>
                             <Input name='name' value={name} />
+                        </Item>
+                        <Item name='账号'>
+                            <Input name='userName' disabled={true} value={userName} />
                         </Item>
                         <Item name='性别' arrow={true}>
                             <Select name='sex' value={sex}>

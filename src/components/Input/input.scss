@@ -9,4 +9,7 @@
         border-color: transparent;
         border-bottom-color: #ddd;
     }
+    &[disabled], &[readonly] {
+        background: none;
+    }
 }

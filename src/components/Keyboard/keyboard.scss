@@ -1,0 +1,68 @@
+ @import "../../static/mixin.scss";
+
+.lxui-keyboard {
+    @include position(fixed, auto, 0, 0, 0, 9999);
+    background: #eaebec;
+    box-shadow: 0 -1px 5px 0 rgba(200, 200, 200, 1); 
+}
+.lxui-keyboard-header {
+    height: .4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 1px solid #ddd;
+}
+.lxui-keyboard-finish {
+    padding: 0 .12rem;
+    height: .36rem;
+    font-size: .14rem;
+    line-height: .36rem;
+}
+.lxui-keyboard-main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .04rem 0;
+}
+.lxui-keyboard-item {
+    padding: .04rem;
+    width: 10%;
+    height: .4rem;
+    -webkit-touch-callout:none;  /*系统默认菜单被禁用*/
+    -webkit-user-select:none; /*webkit浏览器*/
+    user-select:none;
+    span {
+        position: relative;
+        display: block;
+        background: #fff;
+        text-align: center;
+        line-height: .32rem;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        &:after {
+            display: none;
+            @include position(absolute, auto, auto, .6rem, 50%);
+            transform: translate(-50%, 0);
+            @include size(.56rem);
+            border-radius: 4px;
+            @include font(.18rem, #000, .56rem, center, bold);
+            background: #fff;
+            box-shadow: 1px 2px 4px rgba(0, 0, 0, .3);
+            content: attr(data-text);
+        }
+        &:active {
+            &:after {
+                display: block;
+            }
+            background: #f2f2f2;
+        }
+    }
+    &.A {
+        margin-left: 5%;
+    }
+    &:last-child {
+        width: 20%;
+        span:active:after {
+            display: none;
+        }
+    }
+}

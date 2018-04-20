@@ -31,7 +31,7 @@ export default class Input extends Component {
 
     render() {
         const { value } = this.state
-        const { placeholder, name, type, borderType } = this.props
+        const { placeholder, name, type, borderType, disabled } = this.props
         let _className = 'lxui-input'
         switch(borderType) {
             case 'line':
@@ -40,7 +40,7 @@ export default class Input extends Component {
         }
 
         return (
-            <input className={_className} name={name || ''} type={type || 'text'} value={value} placeholder={placeholder || ''} onChange={this.handleChange.bind(this)} />
+            <input className={_className} name={name || ''} type={type || 'text'} disabled={disabled || false} value={value} placeholder={placeholder || ''} onChange={this.handleChange.bind(this)} />
         )
     }
 

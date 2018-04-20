@@ -6,6 +6,7 @@ import './me.scss'
 import Seter from './Seter/Seter'
 import UserSet from './UserSet/UserSet'
 import User from './User/User'
+import Laboratory from './Laboratory/Laboratory'
 
 export default class Me extends Component {
 
@@ -21,6 +22,7 @@ export default class Me extends Component {
                 <Route path='/me' exact={true} component={User} />
                 <Route path='/me/seter' component={Seter} />
                 <Route path='/me/userset' component={UserSet} />
+                <Route path='/me/laboratory' component={Laboratory} />
             </div>
         )
     }
