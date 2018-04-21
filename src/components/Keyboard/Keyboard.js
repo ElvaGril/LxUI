@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import createDomComponent from '../../utils/createDomComponent'
 import './keyboard.scss'
 
-const keyboardCode = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', '', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '删除']
+const keyboardCode = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', '', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'x']
 
 class Keyboard extends Component {
 
@@ -29,7 +29,7 @@ class Keyboard extends Component {
 
     // 选择
     handleCheck(code) {
-        if(code === '删除') {
+        if(code === 'x') {
             this.props.onDelete()
         }else {
             this.props.onChange(code)

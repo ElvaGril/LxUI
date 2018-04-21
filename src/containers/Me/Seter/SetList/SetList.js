@@ -24,6 +24,7 @@ export default class Seter extends Component {
                             <Switch checked={true} />
                         </Item>
                         <Item name='支付密码' arrow={true} onClick={this.handleLinkTo.bind(this, 'paypassword')}></Item>
+                        <Item name='字体大小' arrow={true} onClick={this.handleLinkTo.bind(this, 'setfontsize')}></Item>
                     </List>
                 </div>
             </div>

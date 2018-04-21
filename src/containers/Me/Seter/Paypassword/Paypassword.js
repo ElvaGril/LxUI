@@ -54,6 +54,13 @@ export default class Paypassword extends Component {
         }
     }
 
+    handleDeleteCode() {
+        let { password, defaultIndex } = this.state
+        password[defaultIndex] = ''
+        defaultIndex = defaultIndex === 0 ? defaultIndex : (defaultIndex - 1)
+        this.setState({ password, defaultIndex })
+    }
+
     render() {
         const { password, showKeyboard, defaultIndex } = this.state
 
@@ -68,7 +75,7 @@ export default class Paypassword extends Component {
                         <Button type='primary' onClick={this.handleSave.bind(this)}>保存</Button>
                     </div>
                 </div>
-                <Keyboard show={showKeyboard} onChange={this.handleChangeKeyboard.bind(this)} onFinish={this.handleFinishKeyboard.bind(this)}></Keyboard>
+                <Keyboard show={showKeyboard} onChange={this.handleChangeKeyboard.bind(this)} onFinish={this.handleFinishKeyboard.bind(this)} onDelete={this.handleDeleteCode.bind(this)}></Keyboard>
             </div>
         )
     }
